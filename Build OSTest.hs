@@ -1,10 +1,7 @@
 --Beginning setup stage of Build OSTest@master
 --
 ---------------------------------------------------------------------------
---git clone -v --recurse-submodules --depth 1 --single-branch --shallow-submodules -o master  -- git@github.com:jsren/ostest acdf831c-69a1-47b9-ad97-d43ea8581dbc
---
-Cloning into 'acdf831c-69a1-47b9-ad97-d43ea8581dbc'...
-
+--git clone -q --recurse-submodules --depth 1 --single-branch --shallow-submodules -o master  -- git@github.com:jsren/ostest 10424002-36e3-46de-8641-8b2745eb674a
 --
 --Beginning build stage of Build OSTest@master
 --
@@ -13,8 +10,6 @@ Cloning into 'acdf831c-69a1-47b9-ad97-d43ea8581dbc'...
 --
 --g++ -c -Wall -Wextra -fno-sized-deallocation -DOSTEST_STD_EXCEPTIONS -O3 -std=c++11 ostest.cpp -o ostest.o
 --g++ -Wall -Wextra -O3 -std=c++11 ostest.o example.cpp -o example.exe
---
-
 --Beginning test stage of Build OSTest@master
 --
 ---------------------------------------------------------------------------
@@ -59,5 +54,8 @@ Cloning into 'acdf831c-69a1-47b9-ad97-d43ea8581dbc'...
 -- FINAL: [FAIL] [example.cpp:116] "false"
 --	[PASS] [example.cpp:117] "true"
 --
---
 
+
+tests_run = 5
+tests_passed = 1
+tests_failed = 4
