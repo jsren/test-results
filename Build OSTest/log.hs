@@ -1,7 +1,7 @@
 --Beginning setup stage of Build OSTest@master
 --
 ---------------------------------------------------------------------------
---git clone -q --recurse-submodules --depth 1 --single-branch --shallow-submodules -o master  -- git@github.com:jsren/ostest f01dfe1a-fd25-4e0d-b564-2911f43afdb4
+--git clone -q --recurse-submodules --depth 1 --single-branch --shallow-submodules -o master  -- git@github.com:jsren/ostest 50d8a27a-427d-4b78-b7ab-e2568c12ffa3
 --
 --Beginning build stage of Build OSTest@master
 --
