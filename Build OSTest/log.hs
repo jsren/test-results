@@ -1,17 +1,16 @@
---Beginning setup stage of Build OSTest@master
---
+--Stage "setup"
 ---------------------------------------------------------------------------
---git clone -q --recurse-submodules --depth 1 --single-branch --shallow-submodules -o master  -- git@github.com:jsren/ostest 2de28ae7-d263-45f9-b81b-3809fb00ae13
+--git clone -q --recurse-submodules --depth 1 --single-branch --shallow-submodules -o master  -- git@github.com:jsren/ostest ba69d4b4-4575-44d1-b66b-667ba7046190
 --
---Beginning build stage of Build OSTest@master
---
+
+--Stage "build"
 ---------------------------------------------------------------------------
 --bash -c "make example"
 --
 --g++ -c -Wall -Wextra -fno-sized-deallocation -DOSTEST_STD_EXCEPTIONS -O3 -std=c++11 ostest.cpp -o ostest.o
 --g++ -Wall -Wextra -O3 -std=c++11 ostest.o example.cpp -o example.exe
---Beginning test stage of Build OSTest@master
---
+
+--Stage "test"
 ---------------------------------------------------------------------------
 --bash -c ./example.exe
 --
@@ -55,7 +54,3 @@
 --	[PASS] [example.cpp:117] "true"
 --
 
-
-tests_run = 5
-tests_passed = 1
-tests_failed = 4
