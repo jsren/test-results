@@ -1,12 +1,14 @@
 --Stage "setup"
 ---------------------------------------------------------------------------
---git clone -q --recurse-submodules --depth 1 --single-branch --shallow-submodules -o master  -- git@github.com:jsren/ostest a02ab493-7bc0-44e9-86a2-2b620201ea8a
+--git clone -q --recurse-submodules --depth 1 --single-branch --shallow-submodules -o master  -- git@github.com:jsren/ostest 0e475b4b-ca80-46b0-80af-41b138871987
 --
 
 --Stage "build"
 ---------------------------------------------------------------------------
 --bash -c "make example"
 --
+--g++ -c -Wall -Wextra -fno-sized-deallocation -DOSTEST_STD_EXCEPTIONS -O3 -std=c++11 ostest.cpp -o ostest.o
+--g++ -Wall -Wextra -O3 -std=c++11 ostest.o example.cpp -o example.exe
 
 --Stage "test"
 ---------------------------------------------------------------------------
