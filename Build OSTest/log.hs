@@ -1,6 +1,6 @@
 --Stage "setup"
 ---------------------------------------------------------------------------
---git clone -q --recurse-submodules --depth 1 --single-branch -o master  -- git@github.com:jsren/ostest e6c8e948-fc25-414f-aa26-f98b9208f726
+--git clone -q --recurse-submodules --depth 1 --single-branch -o master  -- git@github.com:jsren/ostest 201324c2-512b-47de-bad8-e880837592c3
 --
 
 --Stage "build"
