@@ -1,16 +1,5 @@
 ---------------------------------------------------------------------------
-Of 6 tests, 1 succeeded, 5 failed.
+Of 0 tests, 0 succeeded, 0 failed.
 
 --Test Suites:
 --Tests:
---Test 'Test' succeeded
---Test 'Test' FAILED
-[FAIL] [CustomSuite::TestWithLoop] at example.cpp:51
---Test 'Test' FAILED
-[FAIL] [CustomSuite::TestWithLoopBreak] at example.cpp:76
---Test 'Test' FAILED
-[FAIL] [CustomSuite::ExceptionTest] at example.cpp:100
---Test 'Test' FAILED
-[FAIL] [CustomSuite::MetadataTest] at example.cpp:110
---Test 'Test' FAILED
-[FAIL] [CustomSuite::ScopedTest] at example.cpp:126
