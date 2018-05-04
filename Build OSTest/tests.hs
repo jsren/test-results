@@ -1,49 +1,16 @@
 ---------------------------------------------------------------------------
-Of 44 tests, 44 succeeded, 0 failed.
+Of 6 tests, 1 succeeded, 5 failed.
 
 --Test Suites:
 --Tests:
---Test '_AssertionSuite::_TestAssertPass' succeeded
---Test '_AssertionSuite::_TestAssertFail' succeeded
---Test '_AssertionSuite::_TestAssertAllPass' succeeded
---Test '_AssertionSuite::_TestAssertAllFail' succeeded
---Test '_AssertionSuite::_TestAssertZeroPass' succeeded
---Test '_AssertionSuite::_TestAssertZeroFail' succeeded
---Test '_AssertionSuite::_TestAssertNonZero' succeeded
---Test '_AssertionSuite::_TestAssertNonZeroFail' succeeded
---Test '_AssertionSuite::_TestAssertEqPass' succeeded
---Test '_AssertionSuite::_TestAssertEqFail' succeeded
---Test '_AssertionSuite::_TestAssertNeqPass' succeeded
---Test '_AssertionSuite::_TestAssertNeqFail' succeeded
---Test '_AssertionSuite::_TestAssertLtPass' succeeded
---Test '_AssertionSuite::_TestAssertLt1Fail' succeeded
---Test '_AssertionSuite::_TestAssertLt2Fail' succeeded
---Test '_AssertionSuite::_TestAssertGtPass' succeeded
---Test '_AssertionSuite::_TestAssertGt1Fail' succeeded
---Test '_AssertionSuite::_TestAssertGt2Fail' succeeded
---Test '_AssertionSuite::_TestAssertLtEq' succeeded
---Test '_AssertionSuite::_TestAssertLtEqFail' succeeded
---Test '_AssertionSuite::_TestAssertGtEq' succeeded
---Test '_AssertionSuite::_TestAssertGtEqFail' succeeded
---Test '_AssertionSuite::_TestExpectPass' succeeded
---Test '_AssertionSuite::_TestExpectFail' succeeded
---Test '_AssertionSuite::_TestExpectAllPass' succeeded
---Test '_AssertionSuite::_TestExpectAllFail' succeeded
---Test '_AssertionSuite::_TestExpectZeroPass' succeeded
---Test '_AssertionSuite::_TestExpectZeroFail' succeeded
---Test '_AssertionSuite::_TestExpectNonZero' succeeded
---Test '_AssertionSuite::_TestExpectNonZeroFail' succeeded
---Test '_AssertionSuite::_TestExpectEqPass' succeeded
---Test '_AssertionSuite::_TestExpectEqFail' succeeded
---Test '_AssertionSuite::_TestExpectNeqPass' succeeded
---Test '_AssertionSuite::_TestExpectNeqFail' succeeded
---Test '_AssertionSuite::_TestExpectLtPass' succeeded
---Test '_AssertionSuite::_TestExpectLt1Fail' succeeded
---Test '_AssertionSuite::_TestExpectLt2Fail' succeeded
---Test '_AssertionSuite::_TestExpectGtPass' succeeded
---Test '_AssertionSuite::_TestExpectGt1Fail' succeeded
---Test '_AssertionSuite::_TestExpectGt2Fail' succeeded
---Test '_AssertionSuite::_TestExpectLtEq' succeeded
---Test '_AssertionSuite::_TestExpectLtEqFail' succeeded
---Test '_AssertionSuite::_TestExpectGtEq' succeeded
---Test '_AssertionSuite::_TestExpectGtEqFail' succeeded
+--Test 'Test' succeeded
+--Test 'Test' FAILED
+[FAIL] [CustomSuite::TestWithLoop] at example.cpp:51
+--Test 'Test' FAILED
+[FAIL] [CustomSuite::TestWithLoopBreak] at example.cpp:76
+--Test 'Test' FAILED
+[FAIL] [CustomSuite::ExceptionTest] at example.cpp:100
+--Test 'Test' FAILED
+[FAIL] [CustomSuite::MetadataTest] at example.cpp:110
+--Test 'Test' FAILED
+[FAIL] [CustomSuite::ScopedTest] at example.cpp:126
