@@ -1,5 +1,67 @@
 ---------------------------------------------------------------------------
-Of 0 tests, 0 succeeded, 0 failed.
+Of 62 tests, 62 succeeded, 0 failed.
 
 --Test Suites:
 --Tests:
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
+--Test 'Test' succeeded
