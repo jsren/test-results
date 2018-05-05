@@ -1,6 +1,6 @@
 --Stage "setup"
 ---------------------------------------------------------------------------
---git clone -q --recurse-submodules --depth 1 --single-branch -o master  -- git@github.com:jsren/ostest fe5116c8-b043-4131-83c3-1d13026179fe
+--git clone -q --recurse-submodules --depth 1 --single-branch -o master  -- git@github.com:jsren/ostest 5ae5427f-3d87-4913-9c53-74b924508300
 --
 
 --Stage "build"
@@ -9,336 +9,1548 @@
 --
 --g++ -c -fno-sized-deallocation -Wall -Wextra -O3 -std=c++11 -DOSTEST_STD_EXCEPTIONS -fexceptions -frtti ostest.cpp -o ostest.o
 --g++ -Wall -Wextra -O3 -std=c++11 -DOSTEST_STD_EXCEPTIONS -fexceptions -frtti -I. ostest.o selftest/common.cpp selftest/assertion-test.cpp selftest/metadata-test.cpp -o test.exe
-In file included from ./ostest.h:14:0,
+In file included from ./ostest.hpp:14:0,
                  from selftest/common.hpp:2,
                  from selftest/assertion-test.cpp:2:
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestAssertPass]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestAssertPass]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestAssertPass]’
-selftest/assertion-test.cpp:14:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-             return *reinterpret_cast<T*>(_data);
-                                               ^
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestAssertFail1]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestAssertFail1]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestAssertFail1]’
-selftest/assertion-test.cpp:17:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestAssertFail2]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestAssertFail2]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestAssertFail2]’
-selftest/assertion-test.cpp:22:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestAssertionCountPass1]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestAssertionCountPass1]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestAssertionCountPass1]’
-selftest/assertion-test.cpp:28:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestAssertionCountPass2]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestAssertionCountPass2]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestAssertionCountPass2]’
-selftest/assertion-test.cpp:36:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestAssertionCountPass3]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestAssertionCountPass3]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestAssertionCountPass3]’
-selftest/assertion-test.cpp:48:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestAssertionCountPass4]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestAssertionCountPass4]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestAssertionCountPass4]’
-selftest/assertion-test.cpp:60:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestAssertionCountPass5]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestAssertionCountPass5]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestAssertionCountPass5]’
-selftest/assertion-test.cpp:74:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestAssertAllPass]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestAssertAllPass]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestAssertAllPass]’
-selftest/assertion-test.cpp:82:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestAssertAllFail]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestAssertAllFail]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestAssertAllFail]’
-selftest/assertion-test.cpp:87:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestAssertZeroPass]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestAssertZeroPass]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestAssertZeroPass]’
-selftest/assertion-test.cpp:94:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestAssertZeroFail]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestAssertZeroFail]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestAssertZeroFail]’
-selftest/assertion-test.cpp:97:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestAssertNonZero]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestAssertNonZero]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestAssertNonZero]’
-selftest/assertion-test.cpp:101:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestAssertNonZeroFail]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestAssertNonZeroFail]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestAssertNonZeroFail]’
-selftest/assertion-test.cpp:104:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestAssertEqPass]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestAssertEqPass]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestAssertEqPass]’
-selftest/assertion-test.cpp:108:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestAssertEqFail]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestAssertEqFail]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestAssertEqFail]’
-selftest/assertion-test.cpp:111:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestAssertNeqPass]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestAssertNeqPass]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestAssertNeqPass]’
-selftest/assertion-test.cpp:115:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestAssertNeqFail]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestAssertNeqFail]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestAssertNeqFail]’
-selftest/assertion-test.cpp:118:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestAssertLtPass]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestAssertLtPass]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestAssertLtPass]’
-selftest/assertion-test.cpp:122:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestAssertLt1Fail]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestAssertLt1Fail]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestAssertLt1Fail]’
-selftest/assertion-test.cpp:125:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestAssertLt2Fail]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestAssertLt2Fail]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestAssertLt2Fail]’
-selftest/assertion-test.cpp:129:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestAssertGtPass]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestAssertGtPass]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestAssertGtPass]’
-selftest/assertion-test.cpp:133:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestAssertGtFail1]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestAssertGtFail1]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestAssertGtFail1]’
-selftest/assertion-test.cpp:136:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestAssertGtFail2]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestAssertGtFail2]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestAssertGtFail2]’
-selftest/assertion-test.cpp:140:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestAssertLtEq]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestAssertLtEq]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestAssertLtEq]’
-selftest/assertion-test.cpp:144:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestAssertLtEqFail]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestAssertLtEqFail]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestAssertLtEqFail]’
-selftest/assertion-test.cpp:148:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestAssertGtEq]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestAssertGtEq]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestAssertGtEq]’
-selftest/assertion-test.cpp:152:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestAssertGtEqFail]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestAssertGtEqFail]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestAssertGtEqFail]’
-selftest/assertion-test.cpp:156:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestExpectPass]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestExpectPass]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestExpectPass]’
-selftest/assertion-test.cpp:161:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestExpectFail]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestExpectFail]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestExpectFail]’
-selftest/assertion-test.cpp:164:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestExpectAllPass]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestExpectAllPass]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestExpectAllPass]’
-selftest/assertion-test.cpp:169:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestExpectAllFail]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestExpectAllFail]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestExpectAllFail]’
-selftest/assertion-test.cpp:175:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestExpectZeroPass]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestExpectZeroPass]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestExpectZeroPass]’
-selftest/assertion-test.cpp:183:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestExpectZeroFail]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestExpectZeroFail]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestExpectZeroFail]’
-selftest/assertion-test.cpp:186:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestExpectNonZero]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestExpectNonZero]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestExpectNonZero]’
-selftest/assertion-test.cpp:190:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestExpectNonZeroFail]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestExpectNonZeroFail]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestExpectNonZeroFail]’
-selftest/assertion-test.cpp:193:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestExpectEqPass]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestExpectEqPass]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestExpectEqPass]’
-selftest/assertion-test.cpp:197:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestExpectEqFail]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestExpectEqFail]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestExpectEqFail]’
-selftest/assertion-test.cpp:200:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestExpectNeqPass]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestExpectNeqPass]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestExpectNeqPass]’
-selftest/assertion-test.cpp:204:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestExpectNeqFail]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestExpectNeqFail]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestExpectNeqFail]’
-selftest/assertion-test.cpp:207:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestExpectLtPass]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestExpectLtPass]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestExpectLtPass]’
-selftest/assertion-test.cpp:211:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestExpectLt1Fail]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestExpectLt1Fail]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestExpectLt1Fail]’
-selftest/assertion-test.cpp:214:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestExpectLt2Fail]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestExpectLt2Fail]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestExpectLt2Fail]’
-selftest/assertion-test.cpp:218:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestExpectGtPass]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestExpectGtPass]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestExpectGtPass]’
-selftest/assertion-test.cpp:222:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestExpectGt1Fail]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestExpectGt1Fail]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestExpectGt1Fail]’
-selftest/assertion-test.cpp:225:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestExpectGt2Fail]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestExpectGt2Fail]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestExpectGt2Fail]’
-selftest/assertion-test.cpp:229:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestExpectLtEq]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestExpectLtEq]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestExpectLtEq]’
-selftest/assertion-test.cpp:233:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestExpectLtEqFail]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestExpectLtEqFail]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestExpectLtEqFail]’
-selftest/assertion-test.cpp:237:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestExpectGtEq]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestExpectGtEq]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestExpectGtEq]’
-selftest/assertion-test.cpp:241:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestExpectGtEqFail]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestExpectGtEqFail]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestExpectGtEqFail]’
-selftest/assertion-test.cpp:245:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestExpectOnceOrBreakPass]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestExpectOnceOrBreakPass]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestExpectOnceOrBreakPass]’
-selftest/assertion-test.cpp:249:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestExpectAllOrBreakPass]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestExpectAllOrBreakPass]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestExpectAllOrBreakPass]’
-selftest/assertion-test.cpp:259:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestExpectOnceOrBreakFail]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestExpectOnceOrBreakFail]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestExpectOnceOrBreakFail]’
-selftest/assertion-test.cpp:269:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_AssertionSuite_TestExpectAllOrBreakFail]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_AssertionSuite_TestExpectAllOrBreakFail]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_AssertionSuite_TestExpectAllOrBreakFail]’
-selftest/assertion-test.cpp:280:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = _tests::_testAssertionSuiteAssertionsTest]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = _tests::_testAssertionSuiteAssertionsTest]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = _tests::_testAssertionSuiteAssertionsTest]’
-selftest/assertion-test.cpp:296:1:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-In file included from ./ostest.h:14:0,
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:14:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertPass) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:14:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertPass) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:17:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertFail1)
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:17:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertFail1)
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:22:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertFail2) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:22:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertFail2) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:28:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertionCountPass1)
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:28:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertionCountPass1)
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:36:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertionCountPass2)
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:36:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertionCountPass2)
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:48:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertionCountPass3)
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:48:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertionCountPass3)
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:60:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertionCountPass4)
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:60:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertionCountPass4)
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:74:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertionCountPass5)
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:74:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertionCountPass5)
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:82:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertAllPass) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:82:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertAllPass) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:87:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertAllFail) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:87:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertAllFail) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:94:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertZeroPass) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:94:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertZeroPass) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:97:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertZeroFail) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:97:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertZeroFail) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:101:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertNonZero) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:101:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertNonZero) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:104:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertNonZeroFail) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:104:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertNonZeroFail) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:108:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertEqPass) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:108:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertEqPass) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:111:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertEqFail) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:111:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertEqFail) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:115:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertNeqPass) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:115:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertNeqPass) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:118:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertNeqFail) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:118:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertNeqFail) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:122:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertLtPass) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:122:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertLtPass) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:125:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertLt1Fail) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:125:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertLt1Fail) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:129:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertLt2Fail) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:129:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertLt2Fail) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:133:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertGtPass) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:133:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertGtPass) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:136:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertGtFail1) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:136:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertGtFail1) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:140:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertGtFail2) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:140:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertGtFail2) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:144:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertLtEq) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:144:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertLtEq) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:148:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertLtEqFail) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:148:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertLtEqFail) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:152:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertGtEq) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:152:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertGtEq) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:156:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertGtEqFail) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:156:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestAssertGtEqFail) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:161:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectPass) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:161:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectPass) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:164:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectFail) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:164:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectFail) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:169:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectAllPass) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:169:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectAllPass) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:175:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectAllFail) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:175:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectAllFail) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:183:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectZeroPass) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:183:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectZeroPass) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:186:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectZeroFail) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:186:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectZeroFail) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:190:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectNonZero) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:190:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectNonZero) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:193:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectNonZeroFail) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:193:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectNonZeroFail) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:197:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectEqPass) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:197:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectEqPass) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:200:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectEqFail) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:200:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectEqFail) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:204:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectNeqPass) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:204:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectNeqPass) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:207:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectNeqFail) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:207:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectNeqFail) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:211:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectLtPass) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:211:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectLtPass) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:214:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectLt1Fail) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:214:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectLt1Fail) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:218:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectLt2Fail) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:218:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectLt2Fail) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:222:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectGtPass) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:222:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectGtPass) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:225:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectGt1Fail) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:225:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectGt1Fail) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:229:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectGt2Fail) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:229:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectGt2Fail) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:233:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectLtEq) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:233:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectLtEq) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:237:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectLtEqFail) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:237:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectLtEqFail) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:241:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectGtEq) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:241:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectGtEq) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:245:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectGtEqFail) {
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:245:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectGtEqFail) {
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:249:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectOnceOrBreakPass)
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:249:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectOnceOrBreakPass)
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:259:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectAllOrBreakPass)
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:259:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectAllOrBreakPass)
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:269:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectOnceOrBreakFail)
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:269:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectOnceOrBreakFail)
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:280:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectAllOrBreakFail)
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/assertion-test.cpp:280:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _AssertionSuite, _TestExpectAllOrBreakFail)
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:646:42: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST(suiteName, testName) _OSTEST_INTERNAL(suiteName, suiteName, testName)
+                                          ^
+./ostest-impl.hpp:656:35: note: in expansion of macro ‘OSTEST_TEST’
+ #define TEST(suiteName, testName) OSTEST_TEST(suiteName, testName)
+                                   ^
+selftest/assertion-test.cpp:298:1: note: in expansion of macro ‘TEST’
+ TEST(AssertionSuite, AssertionsTest)
+ ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:646:42: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST(suiteName, testName) _OSTEST_INTERNAL(suiteName, suiteName, testName)
+                                          ^
+./ostest-impl.hpp:656:35: note: in expansion of macro ‘OSTEST_TEST’
+ #define TEST(suiteName, testName) OSTEST_TEST(suiteName, testName)
+                                   ^
+selftest/assertion-test.cpp:298:1: note: in expansion of macro ‘TEST’
+ TEST(AssertionSuite, AssertionsTest)
+ ^
+In file included from ./ostest.hpp:14:0,
                  from selftest/common.hpp:2,
                  from selftest/metadata-test.cpp:2:
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_MetadataSuite_TestNoMetadataPass]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_MetadataSuite_TestNoMetadataPass]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_MetadataSuite_TestNoMetadataPass]’
-selftest/metadata-test.cpp:23:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-             return *reinterpret_cast<T*>(_data);
-                                               ^
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_MetadataSuite_TestCreateMetadataPass]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_MetadataSuite_TestCreateMetadataPass]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_MetadataSuite_TestCreateMetadataPass]’
-selftest/metadata-test.cpp:28:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_MetadataSuite_TestGetMetadataPass]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_MetadataSuite_TestGetMetadataPass]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_MetadataSuite_TestGetMetadataPass]’
-selftest/metadata-test.cpp:33:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_MetadataSuite_TestSetMetadataPass]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_MetadataSuite_TestSetMetadataPass]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_MetadataSuite_TestSetMetadataPass]’
-selftest/metadata-test.cpp:44:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_MetadataSuite_TestMultipleMetadataPass]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_MetadataSuite_TestMultipleMetadataPass]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_MetadataSuite_TestMultipleMetadataPass]’
-selftest/metadata-test.cpp:57:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_MetadataSuite_TestTransientMetadataOnlyPass]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_MetadataSuite_TestTransientMetadataOnlyPass]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_MetadataSuite_TestTransientMetadataOnlyPass]’
-selftest/metadata-test.cpp:103:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_MetadataSuite_TestTransientMetadataPass]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_MetadataSuite_TestTransientMetadataPass]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_MetadataSuite_TestTransientMetadataPass]’
-selftest/metadata-test.cpp:115:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = selftest::_tests::_test_MetadataSuite_InfoMetadataPass]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = selftest::_tests::_test_MetadataSuite_InfoMetadataPass]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = selftest::_tests::_test_MetadataSuite_InfoMetadataPass]’
-selftest/metadata-test.cpp:148:5:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
-./ostest-impl.h: In instantiation of ‘T& _ostest_internal::_TestWrapper<T>::test() [with T = _tests::_testMetadataSuiteMetadataTests]’:
-./ostest-impl.h:469:35:   required from ‘void _ostest_internal::_TestWrapper<T>::deleteInstance() [with T = _tests::_testMetadataSuiteMetadataTests]’
-./ostest-impl.h:445:41:   required from ‘_ostest_internal::_TestWrapper<T>::~_TestWrapper() [with T = _tests::_testMetadataSuiteMetadataTests]’
-selftest/metadata-test.cpp:197:1:   required from here
-./ostest-impl.h:440:47: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/metadata-test.cpp:23:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _MetadataSuite, _TestNoMetadataPass)
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/metadata-test.cpp:23:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _MetadataSuite, _TestNoMetadataPass)
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/metadata-test.cpp:28:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _MetadataSuite, _TestCreateMetadataPass)
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/metadata-test.cpp:28:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _MetadataSuite, _TestCreateMetadataPass)
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/metadata-test.cpp:33:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _MetadataSuite, _TestGetMetadataPass)
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/metadata-test.cpp:33:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _MetadataSuite, _TestGetMetadataPass)
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/metadata-test.cpp:44:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _MetadataSuite, _TestSetMetadataPass)
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/metadata-test.cpp:44:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _MetadataSuite, _TestSetMetadataPass)
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/metadata-test.cpp:57:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _MetadataSuite, _TestMultipleMetadataPass)
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/metadata-test.cpp:57:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _MetadataSuite, _TestMultipleMetadataPass)
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/metadata-test.cpp:103:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _MetadataSuite, _TestTransientMetadataOnlyPass)
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/metadata-test.cpp:103:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _MetadataSuite, _TestTransientMetadataOnlyPass)
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/metadata-test.cpp:115:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _MetadataSuite, _TestTransientMetadataPass)
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/metadata-test.cpp:115:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _MetadataSuite, _TestTransientMetadataPass)
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/metadata-test.cpp:148:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _MetadataSuite, _InfoMetadataPass)
+     ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:649:61: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST_EX(suiteNamespace, suiteName, testName) _OSTEST_INTERNAL(suiteNamespace::suiteName, suiteName, testName)
+                                                             ^
+./ostest-impl.hpp:657:54: note: in expansion of macro ‘OSTEST_TEST_EX’
+ #define TEST_EX(suiteNamespace, suiteName, testName) OSTEST_TEST_EX(suiteNamespace, suiteName, testName)
+                                                      ^
+selftest/metadata-test.cpp:148:5: note: in expansion of macro ‘TEST_EX’
+     TEST_EX(::selftest, _MetadataSuite, _InfoMetadataPass)
+     ^
+./ostest-impl.hpp:641:99: warning: ‘maybe_unused’ attribute directive ignored [-Wattributes]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:646:42: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST(suiteName, testName) _OSTEST_INTERNAL(suiteName, suiteName, testName)
+                                          ^
+./ostest-impl.hpp:656:35: note: in expansion of macro ‘OSTEST_TEST’
+ #define TEST(suiteName, testName) OSTEST_TEST(suiteName, testName)
+                                   ^
+selftest/metadata-test.cpp:198:1: note: in expansion of macro ‘TEST’
+ TEST(MetadataSuite, MetadataTests)
+ ^
+./ostest-impl.hpp:641:99: warning: unused parameter ‘suite’ [-Wunused-parameter]
+     void _OSTEST_NS::_OSTEST_CLS_NAME(suiteName, testName)::testBody([[maybe_unused]] suiteClass& suite)
+                                                                                                   ^
+./ostest-impl.hpp:646:42: note: in expansion of macro ‘_OSTEST_INTERNAL’
+ #define OSTEST_TEST(suiteName, testName) _OSTEST_INTERNAL(suiteName, suiteName, testName)
+                                          ^
+./ostest-impl.hpp:656:35: note: in expansion of macro ‘OSTEST_TEST’
+ #define TEST(suiteName, testName) OSTEST_TEST(suiteName, testName)
+                                   ^
+selftest/metadata-test.cpp:198:1: note: in expansion of macro ‘TEST’
+ TEST(MetadataSuite, MetadataTests)
+ ^
 
 --Stage "test"
 ---------------------------------------------------------------------------
