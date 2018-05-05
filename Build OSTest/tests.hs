@@ -2,7 +2,7 @@
 Of 62 tests, 62 succeeded, 0 failed.
 
 --Test Suites:
---Suite '_AssertionSuite' FAILED
+--Suite '_AssertionSuite' succeeded
 ----Test '_TestAssertPass' succeeded
 ----Test '_TestAssertFail1' succeeded
 ----Test '_TestAssertFail2' succeeded
@@ -57,7 +57,7 @@ Of 62 tests, 62 succeeded, 0 failed.
 ----Test '_TestExpectAllOrBreakPass' succeeded
 ----Test '_TestExpectOnceOrBreakFail' succeeded
 ----Test '_TestExpectAllOrBreakFail' succeeded
---Suite '_MetadataSuite' FAILED
+--Suite '_MetadataSuite' succeeded
 ----Test '_TestNoMetadataPass' succeeded
 ----Test '_TestCreateMetadataPass' succeeded
 ----Test '_TestGetMetadataPass' succeeded
